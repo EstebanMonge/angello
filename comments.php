@@ -5,7 +5,6 @@
 	$vlan=$_GET["vlan"];
 	$type=$_GET["type"];
 	$pdo = Database::connect();
-        $sql = "SELECT comments FROM hostnames WHERE ip LIKE '".$ip."'";
 ?>
 <html lang="en">
 <head>
@@ -28,9 +27,11 @@
                 <h3><?php echo $type?> comment for <?php 
 		if ($ip) {
 			echo "host ".$ip;
+        		$sql = "SELECT comments FROM hostnames WHERE ip LIKE '".$ip."'";
 		}
 		else {
 			echo "vlan ".$vlan;
+        		$sql = "SELECT description AS comments FROM vlans WHERE vlan LIKE '".$vlan."'";
 		
 		}
 		?>
@@ -44,6 +45,7 @@
 			}
 			?></TEXTAREA>
  			<input type="hidden" name="ip" value="<?php echo $ip?>">
+ 			<input type="hidden" name="vlan" value="<?php echo $vlan?>">
  		</div>
   		<button type="submit" class="btn btn-default">Submit</button>
 		</form>
