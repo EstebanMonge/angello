@@ -2,7 +2,7 @@
 include 'database.php';
 function drawHeader() {
 	$pdo = Database::connect();
-	$sql = 'SELECT * FROM vlans ORDER BY vlan DESC';
+	$sql = 'SELECT * FROM vlans ORDER BY vlan ASC';
 	$output='<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 	    <div class="container">
 	        <div class="navbar-header">

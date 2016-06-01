@@ -43,7 +43,7 @@
                   <tbody>
                   <?php
                    $pdo = Database::connect();
-                   $sql = "SELECT * FROM hostnames WHERE vlan LIKE '".$vlan."' ORDER BY ip DESC";
+                   $sql = "SELECT * FROM hostnames WHERE vlan LIKE '".$vlan."' ORDER BY INET_ATON(ip) ASC";
                    foreach ($pdo->query($sql) as $row) {
                             echo '<tr>';
 			    $iplast=explode(".", $row['ip']);
