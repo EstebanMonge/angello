@@ -26,7 +26,7 @@
 
         for($zm=1;($nw + $zm)<=($bc_long - 1);$zm++)
         {
-	    $sql="INSERT INTO hostnames (ip,vlan) VALUES ('".long2ip($nw + $zm)."','".$vlan."')";
+	    $sql="INSERT INTO hostnames (ip,vlan,hostname) VALUES ('".long2ip($nw + $zm)."','".$vlan."','free')";
 	    $q = $pdo->prepare($sql);
 	    $q->execute();
 	}
