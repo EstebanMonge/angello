@@ -1,6 +1,0 @@
-AuthType Basic
-AuthName "IP Management"
-AuthUserFile /var/www/html/angello/.htpasswd
-Require valid-user
-order allow,deny
-allow from all
