@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
         include 'header.php';
+        $pdo = Database::connect();
 ?>
 <html lang="en">
 <head>
@@ -22,6 +23,8 @@
 		{
 			$vlan=$_GET["vlan"];
 		}
+		$sql = "select count(*) AS total from hostnames where vlan='".$vlan."'"
+		$sql = "select count(*) AS free from hostnames where hostname='free' and vlan='".$vlan."'"
 	?>
             <div class="row">
                 <h3>Hostnames</h3>
@@ -42,7 +45,6 @@
                   </thead>
                   <tbody>
                   <?php
-                   $pdo = Database::connect();
                    $sql = "SELECT * FROM hostnames WHERE vlan LIKE '".$vlan."' ORDER BY INET_ATON(ip) ASC";
                    foreach ($pdo->query($sql) as $row) {
                             echo '<tr>';
@@ -54,7 +56,7 @@
                             echo '<td>'. $row['interface'] . '</td>';
 			    if ($row['comments'] == "")
 			    {
-                            	echo '<td><a href="comments.php?ip='.$row['ip'].'&type=Add">Add</a></td>';
+                            	echo '<td><a href="comments.php?ip='.$row['ip'].'&vlan='.$row['vlan'].'&type=Add">Add</a></td>';
 			    }
 			    else
 			    {

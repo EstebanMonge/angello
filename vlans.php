@@ -40,15 +40,16 @@
                       <th>IP Range</th>
                       <th>Mask</th>
                       <th>Comment</th>
+                      <th>Delete</th>
                     </tr>
                   </thead>
                   <tbody>
                   <?php
                    $pdo = Database::connect();
-                   $sql = "SELECT * FROM vlans ORDER BY vlan DESC";
+                   $sql = "SELECT * FROM vlans ORDER BY vlan ASC";
                    foreach ($pdo->query($sql) as $row) {
                             echo '<tr>';
-                            echo '<td>'. $row['vlan'] . '</td>';
+                            echo '<td><a href="hosts.php?vlan='.$row['vlan'].'">'. $row['vlan'] . '</a></td>';
                             echo '<td>'. $row['iprange'] . '</td>';
                             echo '<td>'. $row['mask'] . '</td>';
 			    if ($row['description'] == "")
@@ -59,6 +60,7 @@
 			    {
 				echo '<td><a href="comments.php?vlan='.$row['vlan'].'&type=Modify">'.$row['description'].'</a></td>';
 			    }
+			    echo '<td><a href="delete_vlan.php?vlan='.$row['vlan'].'"><button type="button" class="btn btn-info">Click me</button></td></a>';
                             echo '</tr>';
                    }
                    Database::disconnect();
