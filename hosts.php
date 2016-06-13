@@ -23,14 +23,19 @@
 		{
 			$vlan=$_GET["vlan"];
 		}
-		$sql = "select count(*) AS total from hostnames where vlan='".$vlan."'"
-		$sql = "select count(*) AS free from hostnames where hostname='free' and vlan='".$vlan."'"
+		$sql = "select count(*) AS total from hostnames where vlan='".$vlan."'";
+		$total_ip=$pdo->query($sql)->fetch();
+		$sql = "select count(*) AS free from hostnames where hostname='free' and vlan='".$vlan."'";
+		$free_ip=$pdo->query($sql)->fetch();
+		$used_ip=$total_ip[total]-$free_ip[free];
+		$perc_used_ip=($used_ip*100)/$total_ip[total];
 	?>
             <div class="row">
                 <h3>Hostnames</h3>
             </div>
             <div class="row">
                 <h3>Hosts for vlan <?php echo $vlan;?></h3>
+		<p class="text-right"><?php echo "<strong>".number_format((float)$perc_used_ip, 2, '.', '')."%</strong> network usage and <strong>".$free_ip[free]." free</strong> IPs of ".$total_ip[total];?></p>
                 <table class="table table-striped table-bordered" data-sortable>
                   <thead>
                     <tr>

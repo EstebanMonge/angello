@@ -40,7 +40,7 @@
                       <th>IP Range</th>
                       <th>Mask</th>
                       <th>Comment</th>
-                      <th>Delete</th>
+                      <th>Actions</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -60,14 +60,32 @@
 			    {
 				echo '<td><a href="comments.php?vlan='.$row['vlan'].'&type=Modify">'.$row['description'].'</a></td>';
 			    }
-			    echo '<td><a href="delete_vlan.php?vlan='.$row['vlan'].'"><button type="button" class="btn btn-info">Click me</button></td></a>';
+			    echo '<td><a href="#" data-href="delete_vlan.php?vlan='.$row['vlan'].'" data-toggle="modal" data-target="#confirm-delete"><button type="button" class="btn btn-info">Delete</button></td></a>';
                             echo '</tr>';
                    }
                    Database::disconnect();
                   ?>
                   </tbody>
             </table>
+<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+            Please confirm deletion 
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-danger btn-ok">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
         </div>
     </div> <!-- /container -->
+    <script>
+	$('#confirm-delete').on('show.bs.modal', function(e) {
+	$(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+	});
+    </script>
   </body>
 </html>
