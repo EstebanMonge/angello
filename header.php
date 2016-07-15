@@ -1,5 +1,8 @@
 <?php
 include 'database.php';
+if (!isset($_COOKIE['username']) || !isset($_COOKIE['password'])) {
+	header('Location: login.php');
+}
 function drawHeader() {
 	$pdo = Database::connect();
 	$sql = 'SELECT * FROM vlans ORDER BY vlan ASC';
@@ -22,6 +25,12 @@ function drawHeader() {
             						$output .='<li><a href="hosts.php?vlan='.$row['vlan'].'">'.$row['vlan'].'</a></li>';
 						}
          				$output .='</ul>
+				</li>
+				<li>
+					<a href="users.php">Users</a>
+				</li>
+				<li>
+					<a href="logout.php">Logout</a>
 				</li>
                         </ul>
 		</div>
