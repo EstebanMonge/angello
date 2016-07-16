@@ -47,6 +47,7 @@
  			<input type="hidden" name="ip" value="<?php echo $ip?>">
  			<input type="hidden" name="vlan" value="<?php echo $vlan?>">
  		</div>
+		<label for="reserved"><input type="checkbox" value="reserved" name="reserved">Reserved?</label>
   		<button type="submit" class="btn btn-default">Submit</button>
 		</form>
             </div> <!-- /row -->

@@ -26,6 +26,12 @@ function drawHeader() {
 						}
          				$output .='</ul>
 				</li>
+                                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Ubication</a>
+					<ul class="dropdown-menu">
+            					<li><a href="countries.php">Countries</a></li>
+            					<li><a href="sites.php">Sites</a></li>
+					</ul>
+				</li>
 				<li>
 					<a href="users.php">Users</a>
 				</li>
