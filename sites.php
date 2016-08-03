@@ -4,20 +4,17 @@
 ?>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
     <link   href="css/bootstrap.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/sortable.min.js"></script>
 </head>
 <body>
-    <div class="container">
 	<?php
 		echo drawHeader();
 	?>
-            <div class="row">
-                <h3>Sites</h3>
-            </div>
+    <div class="container-fluid">
             <div class="row">
                 <h3>Sites</h3>
             </div>

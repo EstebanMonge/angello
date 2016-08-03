@@ -4,14 +4,13 @@
 ?>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
     <link   href="css/bootstrap.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/sortable.min.js"></script>
 </head>
 <body>
-    <div class="container">
 	<?php
 		echo drawHeader();
 		if (!$_GET)
@@ -23,9 +22,7 @@
 			$vlan=$_GET["vlan"];
 		}
 	?>
-            <div class="row">
-                <h3>VLANs</h3>
-            </div>
+    <div class="container-fluid">
             <div class="row">
                 <h3>VLANs</h3>
             </div>
@@ -40,8 +37,8 @@
                 <table class="table table-striped table-bordered" data-sortable>
                   <thead>
                     <tr>
-                      <th>VLAN</th>
-                      <th>IP Range</th>
+                      <th>VLAN <span class="caret"></span></th>
+                      <th>IP Range <span class="caret"></span></th>
                       <th>Mask</th>
                       <th>Comment</th>
                       <th>Actions</th>

@@ -5,14 +5,13 @@
 ?>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
     <link   href="css/bootstrap.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/sortable.min.js"></script>
 </head>
 <body>
-    <div class="container">
 	<?php
 		echo drawHeader();
 		if (!$_GET)
@@ -30,21 +29,19 @@
 		$used_ip=$total_ip[total]-$free_ip[free];
 		$perc_used_ip=($used_ip*100)/$total_ip[total];
 	?>
-            <div class="row">
-                <h3>Hostnames</h3>
-            </div>
+    <div class="container-fluid">
             <div class="row">
                 <h3>Hosts for vlan <?php echo $vlan;?></h3>
 		<p class="text-right"><?php echo "<strong>".number_format((float)$perc_used_ip, 2, '.', '')."%</strong> network usage and <strong>".$free_ip[free]." free</strong> IPs of ".$total_ip[total];?></p>
                 <table class="table table-striped table-bordered" data-sortable>
                   <thead>
                     <tr>
-                      <th>IP</th>
-                      <th>DNS</th>
-                      <th>OS</th>
-                      <th>MAC</th>
-                      <th>Interface</th>
-                      <th>Comment</th>
+                      <th>IP <span class="caret"></span></th>
+                      <th>DNS <span class="caret"></span></th>
+                      <th>OS <span class="caret"></span></th>
+                      <th>MAC <span class="caret"></span></th>
+                      <th>Interface <span class="caret"></span></th>
+                      <th>Comment <span class="caret"></span></th>
                       <th>Services</th>
                     </tr>
                   </thead>
