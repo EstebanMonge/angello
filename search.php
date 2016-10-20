@@ -7,23 +7,19 @@
 		echo drawHeader();
 		if (!$_GET)
 		{
-			$vlan=128;
+			$search=none;
 		}
 		else
 		{
-			$vlan=$_GET["vlan"];
+			$search=$_GET["search"];
 		}
-		$sql = "select count(*) AS total from hostnames where vlan='".$vlan."'";
-		$total_ip=$pdo->query($sql)->fetch();
-		$sql = "select count(*) AS free from hostnames where hostname='free' and vlan='".$vlan."'";
-		$free_ip=$pdo->query($sql)->fetch();
-		$used_ip=$total_ip[total]-$free_ip[free];
-		$perc_used_ip=($used_ip*100)/$total_ip[total];
+		$sql = "SELECT count(*) AS total FROM hostnames WHERE hostname LIKE '%".$search."%' OR ip LIKE '%".$search."%' OR mac LIKE '%".$search."%'";
+		$total_rows=$pdo->query($sql)->fetch();
 	?>
     <div class="container-fluid">
             <div class="row">
-                <h3>Hosts for vlan <?php echo $vlan;?></h3>
-		<p class="text-right"><?php echo "<strong>".number_format((float)$perc_used_ip, 2, '.', '')."%</strong> network usage and <strong>".$free_ip[free]." free</strong> IPs of ".$total_ip[total];?></p>
+                <h3>Search results for <?php echo $search;?></h3>
+		<p class="text-right"><?php echo "I found <strong>".$total_rows[total]."</strong> results";?></p>
 		<div class="pull-right" style="padding-bottom:20px">
 			<p><button id="export" data-export="export" type="button" class="btn btn-info">Export</button></p>
 		</div>
@@ -41,7 +37,7 @@
                   </thead>
                   <tbody>
                   <?php
-                   $sql = "SELECT * FROM hostnames WHERE vlan LIKE '".$vlan."' ORDER BY INET_ATON(ip) ASC";
+                   $sql = "SELECT * FROM hostnames WHERE hostname LIKE '%".$search."%' OR ip LIKE '%".$search."%' OR mac LIKE '%".$search."%' ORDER BY INET_ATON(ip) ASC";
                    foreach ($pdo->query($sql) as $row) {
                             echo '<tr>';
 			    $iplast=explode(".", $row['ip']);

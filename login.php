@@ -1,31 +1,34 @@
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <link   href="css/bootstrap.min.css" rel="stylesheet">
-    <link   href="css/login.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/sortable.min.js"></script>
-</head>
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Angello IP Management</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-offset-5 col-md-3">
-            <form name="login" action="validate.php" method="post"> 
-            <div class="form-login">
-            <h4>Angello IP Management</h4>
-            <input type="text" id="username" name="username" class="form-control input-sm chat-input" placeholder="username" />
-            </br>
-            <input type="password" id="password" name="password" class="form-control input-sm chat-input" placeholder="password" />
-            </br>
-            <div class="wrapper">
-            <span class="group-btn">     
-		<input type="submit" class="btn btn-info" value="Login" /> 
-            </span>
-            </div>
-            </div>
-       	    </form> 
-        </div>
-    </div>
+  <body>
+
+    
+<!-- Form Mixin-->
+<!-- Input Mixin-->
+<!-- Button Mixin-->
+<!-- Pen Title-->
+<div class="pen-title">
+  <h1>Angello IP Management</h1>
 </div>
+<!-- Form Module-->
+<div class="module form-module">
+  <div class="toggle"><i class="fa fa-times fa-pencil"></i>
+  </div>
+  <div class="form">
+    <h2>Login to your account</h2>
+    <form action="validate.php" method="post">
+      <input id="username" name="username" type="text" placeholder="Username"/>
+      <input id="password" name="password" type="password" placeholder="Password"/>
+      <button>Login</button>
+    </form>
+  </div>
+</div>
+  </body>
 </html>

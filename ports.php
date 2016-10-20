@@ -1,33 +1,20 @@
-<!DOCTYPE html>
 <?php
         include 'header.php';
 ?>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <link   href="css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/sortable.min.js"></script>
-</head>
- 
 <body>
-    <div class="container">
 	<?php
            echo drawHeader();
 	   $ip=$_GET["ip"];
 	?>
-            <div class="row">
-                <h3>Hostnames</h3>
-            </div>
+    <div class="container-fluid">
             <div class="row">
                 <h3>Services for host <?php echo $ip?></h3>
                 <table class="table table-striped table-bordered" data-sortable>
                   <thead>
                     <tr>
-                      <th>Port number</th>
-                      <th>Protocol</th>
-                      <th>Description</th>
+                      <th>Port number <span class="caret"></th>
+                      <th>Protocol <span class="caret"></th>
+                      <th>Description <span class="caret"></th>
                     </tr>
                   </thead>
                   <tbody>

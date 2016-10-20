@@ -12,10 +12,10 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     
     if ($_POST['password'] == $password) {    
             /* Cookie expires when browser closes */
-            setcookie('username', $_POST['username'], false, '/angello', 'kanboard.gbmcloud.com');
-            setcookie('password', md5($_POST['password']), false, '/angello', 'kanboard.gbmcloud.com');
+            setcookie('username', $_POST['username'], false, '/angello', 'ms.gbmcloud.com');
+            setcookie('password', md5($_POST['password']), false, '/angello', 'ms.gbmcloud.com');
 	    if ( $isadmin ==  1) {
-            	setcookie('isadmin', 'yes', false, '/angello', 'kanboard.gbmcloud.com');
+            	setcookie('isadmin', 'yes', false, '/angello', 'ms.gbmcloud.com');
 	    }
             header('Location: index.php');
         

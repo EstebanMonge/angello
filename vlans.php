@@ -1,15 +1,6 @@
-<!DOCTYPE html>
 <?php
         include 'header.php';
 ?>
-<html lang="en">
-<head>
-    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
-    <link   href="css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/sortable.min.js"></script>
-</head>
 <body>
 	<?php
 		echo drawHeader();
@@ -40,7 +31,7 @@
                       <th>VLAN <span class="caret"></span></th>
                       <th>IP Range <span class="caret"></span></th>
                       <th>Mask</th>
-                      <th>Comment</th>
+                      <th>Comment <span class="caret"></th>
                       <th>Actions</th>
                     </tr>
                   </thead>
