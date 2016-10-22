@@ -1,8 +1,8 @@
--- MySQL dump 10.15  Distrib 10.0.25-MariaDB, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.15  Distrib 10.0.27-MariaDB, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: angello
 -- ------------------------------------------------------
--- Server version	10.0.25-MariaDB-0+deb8u1
+-- Server version	10.0.27-MariaDB-0+deb8u1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -14,6 +14,36 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `clients`
+--
+
+DROP TABLE IF EXISTS `clients`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `clients` (
+  `id_client` int(11) NOT NULL AUTO_INCREMENT,
+  `name` char(40) DEFAULT NULL,
+  `description` char(100) DEFAULT NULL,
+  PRIMARY KEY (`id_client`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `countries`
+--
+
+DROP TABLE IF EXISTS `countries`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `countries` (
+  `id_country` int(11) NOT NULL AUTO_INCREMENT,
+  `name` char(40) DEFAULT NULL,
+  `description` char(100) DEFAULT NULL,
+  PRIMARY KEY (`id_country`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `hostnames`
@@ -36,6 +66,22 @@ CREATE TABLE `hostnames` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Table structure for table `logs`
+--
+
+DROP TABLE IF EXISTS `logs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `logs` (
+  `id_log` int(11) NOT NULL AUTO_INCREMENT,
+  `date` datetime DEFAULT NULL,
+  `username` char(40) DEFAULT NULL,
+  `action` char(100) DEFAULT NULL,
+  PRIMARY KEY (`id_log`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `services`
 --
 
@@ -50,7 +96,28 @@ CREATE TABLE `services` (
   `port_number` int(11) DEFAULT NULL,
   PRIMARY KEY (`service_id`),
   KEY `ip` (`ip`)
-) ENGINE=MyISAM AUTO_INCREMENT=83959 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=108395 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `sites`
+--
+
+DROP TABLE IF EXISTS `sites`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sites` (
+  `id_site` int(11) NOT NULL AUTO_INCREMENT,
+  `name` char(40) DEFAULT NULL,
+  `description` char(100) DEFAULT NULL,
+  `id_client` int(11) DEFAULT NULL,
+  `id_country` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_site`),
+  KEY `id_client` (`id_client`),
+  KEY `id_country` (`id_country`),
+  CONSTRAINT `sites_ibfk_1` FOREIGN KEY (`id_client`) REFERENCES `clients` (`id_client`),
+  CONSTRAINT `sites_ibfk_2` FOREIGN KEY (`id_country`) REFERENCES `countries` (`id_country`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,7 +136,7 @@ CREATE TABLE `users` (
   `is_admin` tinyint(1) DEFAULT NULL,
   `is_active` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -97,4 +164,4 @@ CREATE TABLE `vlans` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-07-15 16:36:27
+-- Dump completed on 2016-10-21 21:59:06
