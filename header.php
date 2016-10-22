@@ -59,6 +59,9 @@ function drawHeader() {
 				<li>
 					<a href="users.php">Users</a>
 				</li>
+				<li>
+					<a href="logs.php">Logs</a>
+				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li>
