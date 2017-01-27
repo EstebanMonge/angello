@@ -1,16 +1,16 @@
 <?php
     //Get arguments from CLI and validate it
-    if ( count($argv) != 4 ) {
-        echo "Usage: ".$argv[0]." username password /path/nmap_scan.xml\n";
+    if ( count($argv) != 5 ) {
+        echo "Usage: ".$argv[0]." username password /path/nmap_scan.xml url\n";
         exit;
     }
    if ( !is_file($argv[3]) ) {
         echo "File does not exist\n";
-        echo "Usage: ".$argv[0]." username password /path/nmap_scan.xml\n";
+        echo "Usage: ".$argv[0]." username password /path/nmap_scan.xml url\n";
         exit;
    }
 
-        $target_url = 'https://kanboard.gbmcloud.com/angello/upload.php';
+        $target_url = $argv[4];
         //This needs to be the full path to the file you want to send.
         $file_name_with_full_path = realpath($argv[3]);
         /* curl will accept an array here too.
