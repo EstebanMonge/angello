@@ -3,8 +3,8 @@
 ?>
 <body>
 	<?php
-		echo drawHeader();
-	?>
+        echo drawHeader();
+    ?>
     <div class="container-fluid">
             <div class="row">
                 <h3>Logs</h3>
@@ -21,13 +21,13 @@
                   <tbody>
                   <?php
                    $pdo = Database::connect();
-                   $sql = "SELECT * FROM logs ORDER BY date DESC";
+                   $sql = 'SELECT * FROM logs ORDER BY date DESC';
                    foreach ($pdo->query($sql) as $row) {
-                            echo '<tr>';
-                            echo '<td>'. $row['date'] . '</td>';
-                            echo '<td>'. $row['username'] . '</td>';
-                            echo '<td>'. $row['action'] . '</td>';
-                            echo '</tr>';
+                       echo '<tr>';
+                       echo '<td>'.$row['date'].'</td>';
+                       echo '<td>'.$row['username'].'</td>';
+                       echo '<td>'.$row['action'].'</td>';
+                       echo '</tr>';
                    }
                    Database::disconnect();
                   ?>

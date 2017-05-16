@@ -1,12 +1,14 @@
 <?php
+
 include 'database.php';
 if (!isset($_COOKIE['username']) || !isset($_COOKIE['password'])) {
-	header('Location: login.php');
+    header('Location: login.php');
 }
-function drawHeader() {
-	$pdo = Database::connect();
-	$sql = 'SELECT * FROM vlans ORDER BY vlan ASC';
-	$output='
+function drawHeader()
+{
+    $pdo = Database::connect();
+    $sql = 'SELECT * FROM vlans ORDER BY vlan ASC';
+    $output = '
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,10 +44,10 @@ function drawHeader() {
 				</li>
                                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Hosts <span class="caret"></span></a>
 					<ul class="dropdown-menu">';
-						foreach ($pdo->query($sql) as $row) {
-            						$output .='<li><a href="hosts.php?vlan='.$row['vlan'].'">'.$row['vlan'].'</a></li>';
-						}
-         				$output .='</ul>
+    foreach ($pdo->query($sql) as $row) {
+        $output .= '<li><a href="hosts.php?vlan='.$row['vlan'].'">'.$row['vlan'].'</a></li>';
+    }
+    $output .= '</ul>
 				</li>
                                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Ubication <span class="caret"></span></a>
 					<ul class="dropdown-menu">
@@ -81,7 +83,7 @@ function drawHeader() {
 		</div>
 	    </div>
 	</nav>';
-	Database::disconnect();
-	return $output;
+    Database::disconnect();
+
+    return $output;
 }
-?>

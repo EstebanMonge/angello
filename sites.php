@@ -3,18 +3,18 @@
 ?>
 <body>
 	<?php
-		echo drawHeader();
-	?>
+        echo drawHeader();
+    ?>
     <div class="container-fluid">
             <div class="row">
                 <h3>Sites</h3>
             </div>
             <div class="pull-right" style="padding-bottom:20px">
 	    <?php
-	    if ( isset($_COOKIE['isadmin']) ) {
-		echo "<a href=\"add_site.php\" class=\"btn btn-info\" role=\"button\">Add Site</a>";
-	    }
-	    ?>
+        if (isset($_COOKIE['isadmin'])) {
+            echo '<a href="add_site.php" class="btn btn-info" role="button">Add Site</a>';
+        }
+        ?>
             </div>
             <div>
                 <table class="table table-striped table-bordered" data-sortable>
@@ -28,26 +28,22 @@
                   <tbody>
                   <?php
                    $pdo = Database::connect();
-                   $sql = "SELECT * FROM sites ORDER BY name ASC";
+                   $sql = 'SELECT * FROM sites ORDER BY name ASC';
                    foreach ($pdo->query($sql) as $row) {
-                            echo '<tr>';
-                            echo '<td>'. $row['name'] . '</td>';
-			    if ($row['description'] == "")
-			    {
-                            	echo '<td><a href="comments.php?site='.$row['site'].'&type=Add">Add</a></td>';
-			    }
-			    else
-			    {
-				echo '<td><a href="comments.php?site='.$row['site'].'&type=Modify">'.$row['description'].'</a></td>';
-			    }
-			    if ( isset($_COOKIE['isadmin']) ) {
-			    	echo '<td><a href="#" data-href="delete_site.php?site='.$row['name'].'" data-toggle="modal" data-target="#confirm-delete"><button type="button" class="btn btn-info">Delete</button></a></td>';
-                            	echo '</tr>';
-			    }
-			    else {
-                                echo '<td>None</td>';
-                                echo '</tr>';
-			    }
+                       echo '<tr>';
+                       echo '<td>'.$row['name'].'</td>';
+                       if ($row['description'] == '') {
+                           echo '<td><a href="comments.php?site='.$row['site'].'&type=Add">Add</a></td>';
+                       } else {
+                           echo '<td><a href="comments.php?site='.$row['site'].'&type=Modify">'.$row['description'].'</a></td>';
+                       }
+                       if (isset($_COOKIE['isadmin'])) {
+                           echo '<td><a href="#" data-href="delete_site.php?site='.$row['name'].'" data-toggle="modal" data-target="#confirm-delete"><button type="button" class="btn btn-info">Delete</button></a></td>';
+                           echo '</tr>';
+                       } else {
+                           echo '<td>None</td>';
+                           echo '</tr>';
+                       }
                    }
                    Database::disconnect();
                   ?>
