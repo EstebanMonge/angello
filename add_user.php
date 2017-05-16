@@ -12,9 +12,9 @@
 </head>
 <body>
 	<?php
-		echo drawHeader();
-		$username=$_GET["username"];
-	?>
+        echo drawHeader();
+        $username = $_GET['username'];
+    ?>
     <div class="container-fluid">
             <div class="row">
                 <h3>Users</h3>

@@ -12,16 +12,13 @@
 </head>
 <body>
 	<?php
-		echo drawHeader();
-		if (!$_GET)
-		{
-			$vlan=128;
-		}
-		else
-		{
-			$vlan=$_GET["vlan"];
-		}
-	?>
+        echo drawHeader();
+        if (!$_GET) {
+            $vlan = 128;
+        } else {
+            $vlan = $_GET['vlan'];
+        }
+    ?>
     <div class="container-fluid">
             <div class="row">
                 <h3>VLANs</h3>

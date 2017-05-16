@@ -4,16 +4,13 @@
  
 <body>
 	<?php
-		echo drawHeader();
-		if (!$_GET)
-		{
-			$vlan=128;
-		}
-		else
-		{
-			$vlan=$_GET["vlan"];
-		}
-	?>
+        echo drawHeader();
+        if (!$_GET) {
+            $vlan = 128;
+        } else {
+            $vlan = $_GET['vlan'];
+        }
+    ?>
     <div class="container-fluid">
             <div class="row">
 		    <div class="col-sm-4">
@@ -39,10 +36,10 @@
                                                                                         $pdo = Database::connect();
                                                                                         $sql = 'SELECT * FROM vlans ORDER BY vlan ASC';
                                                                                         foreach ($pdo->query($sql) as $row) {
-                                                                                                echo '<option value="'.$row['vlan'].'">'.$row['vlan'].'</option>';
+                                                                                            echo '<option value="'.$row['vlan'].'">'.$row['vlan'].'</option>';
                                                                                         }
                                                                                         Database::disconnect();
-										?>
+                                        ?>
                                                                         </select>
                                                                 </div>
                                                         </form>

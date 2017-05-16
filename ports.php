@@ -4,8 +4,8 @@
 <body>
 	<?php
            echo drawHeader();
-	   $ip=$_GET["ip"];
-	?>
+       $ip = $_GET['ip'];
+    ?>
     <div class="container-fluid">
             <div class="row">
                 <h3>Services for host <?php echo $ip?></h3>
@@ -22,11 +22,11 @@
                    $pdo = Database::connect();
                    $sql = 'SELECT port_number,type,name FROM services WHERE ip LIKE "'.$ip.'" ORDER BY ip DESC';
                    foreach ($pdo->query($sql) as $row) {
-                            echo '<tr>';
-                            echo '<td>'. $row['port_number'] . '</td>';
-                            echo '<td>'. $row['type'] . '</td>';
-                            echo '<td>'. $row['name'] . '</td>';
-                            echo '</tr>';
+                       echo '<tr>';
+                       echo '<td>'.$row['port_number'].'</td>';
+                       echo '<td>'.$row['type'].'</td>';
+                       echo '<td>'.$row['name'].'</td>';
+                       echo '</tr>';
                    }
                    Database::disconnect();
                   ?>
