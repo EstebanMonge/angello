@@ -4,6 +4,20 @@
 ?>
 <body>
 	<?php
+<<<<<<< HEAD
+		echo drawHeader();
+		if (!$_GET)
+		{
+			$search=none;
+		}
+		else
+		{
+			$search=$_GET["search"];
+		}
+		$sql = "SELECT count(*) AS total FROM hostnames WHERE hostname LIKE '%".$search."%' OR os LIKE '%".$search."%' OR ip LIKE '%".$search."%' OR mac LIKE '%".$search."%'";
+		$total_rows=$pdo->query($sql)->fetch();
+	?>
+=======
         echo drawHeader();
         if (!$_GET) {
             $search = none;
@@ -13,6 +27,7 @@
         $sql = "SELECT count(*) AS total FROM hostnames WHERE hostname LIKE '%".$search."%' OR ip LIKE '%".$search."%' OR mac LIKE '%".$search."%'";
         $total_rows = $pdo->query($sql)->fetch();
     ?>
+>>>>>>> a0904be705d6269af051b9e9ae3184873b74e65b
     <div class="container-fluid">
             <div class="row">
                 <h3>Search results for <?php echo $search; ?></h3>
@@ -34,7 +49,7 @@
                   </thead>
                   <tbody>
                   <?php
-                   $sql = "SELECT * FROM hostnames WHERE hostname LIKE '%".$search."%' OR ip LIKE '%".$search."%' OR mac LIKE '%".$search."%' ORDER BY INET_ATON(ip) ASC";
+                   $sql = "SELECT * FROM hostnames WHERE hostname LIKE '%".$search."%' OR os LIKE '%".$search."%' OR ip LIKE '%".$search."%' OR mac LIKE '%".$search."%' ORDER BY INET_ATON(ip) ASC";
                    foreach ($pdo->query($sql) as $row) {
                        echo '<tr>';
                        $iplast = explode('.', $row['ip']);

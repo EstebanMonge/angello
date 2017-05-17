@@ -6,11 +6,22 @@
     $mask = $_POST['mask'];
     $iprange = $_POST['iprange'];
         $pdo = Database::connect();
+<<<<<<< HEAD
+        $sql= "INSERT INTO vlans (vlan,description,mask,iprange) VALUES ('".$vlan."','".$description."','".$mask."','".$iprange."')";
+	$q = $pdo->prepare($sql);
+	$q->execute();
+        $sql= "INSERT INTO logs(username,date,action) VALUES ('".$_COOKIE['username']."',now(),'VLAN ".$vlan." added')";
+        $q = $pdo->prepare($sql);
+        $q->execute();
+        $ip_arr = explode("/", $iprange."/".$mask);
+        $bin = "";
+=======
         $sql = "INSERT INTO vlans (vlan,description,mask,iprange) VALUES ('".$vlan."','".$description."','".$mask."','".$iprange."')";
     $q = $pdo->prepare($sql);
     $q->execute();
         $ip_arr = explode('/', $iprange.'/'.$mask);
         $bin = '';
+>>>>>>> a0904be705d6269af051b9e9ae3184873b74e65b
 
         for ($i = 1; $i <= 32; $i++) {
             $bin .= $ip_arr[1] >= $i ? '1' : '0';

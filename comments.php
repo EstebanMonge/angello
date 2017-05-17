@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
         include 'header.php';
     $ip = $_GET['ip'];
@@ -6,23 +5,18 @@
     $type = $_GET['type'];
     $pdo = Database::connect();
 ?>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <link   href="css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/sortable.min.js"></script>
-</head>
- 
 <body>
-    <div class="container">
 	<?php
            echo drawHeader();
+<<<<<<< HEAD
+	?>
+    <div class="container-fluid">
+=======
     ?>
             <div class="row">
                 <h3>Hostnames</h3>
             </div>
+>>>>>>> a0904be705d6269af051b9e9ae3184873b74e65b
             <div class="row">
                 <h3><?php echo $type?> comment for <?php 
         if ($ip) {
@@ -45,7 +39,10 @@
  			<input type="hidden" name="ip" value="<?php echo $ip?>">
  			<input type="hidden" name="vlan" value="<?php echo $vlan?>">
  		</div>
-		<label for="reserved"><input type="checkbox" value="reserved" name="reserved">Reserved?</label>
+		<?php if ($ip) {
+			echo '<label for="reserved"><input type="checkbox" value="reserved" name="reserved">Reserved?</label>';
+		}
+		?>
   		<button type="submit" class="btn btn-default">Submit</button>
 		</form>
             </div> <!-- /row -->

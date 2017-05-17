@@ -2,15 +2,12 @@
 <?php
         include 'header.php';
 ?>
-<html lang="en">
-<head>
-    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
-    <link   href="css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/sortable.min.js"></script>
-</head>
 <body>
+<<<<<<< HEAD
+<?php
+	echo drawHeader();
+?>
+=======
 	<?php
         echo drawHeader();
         if (!$_GET) {
@@ -19,10 +16,8 @@
             $vlan = $_GET['vlan'];
         }
     ?>
+>>>>>>> a0904be705d6269af051b9e9ae3184873b74e65b
     <div class="container-fluid">
-            <div class="row">
-                <h3>VLANs</h3>
-            </div>
             <div class="row">
                 <h3>Add VLAN</h3>
  <form role="form" action="insert_vlan.php" method="POST">
