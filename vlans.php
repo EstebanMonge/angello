@@ -38,27 +38,23 @@
                    $pdo = Database::connect();
                    $sql = 'SELECT * FROM vlans ORDER BY vlan ASC';
                    foreach ($pdo->query($sql) as $row) {
-                            echo '<tr>';
-                            echo '<td><a href="hosts.php?vlan='.$row['vlan'].'">'. $row['vlan'] . '</a></td>';
-                            echo '<td>'. $row['id_site'] . '</td>';
-                            echo '<td>'. $row['iprange'] . '</td>';
-                            echo '<td>'. $row['mask'] . '</td>';
-			    if ($row['description'] == "")
-			    {
-                            	echo '<td><a href="comments.php?vlan='.$row['vlan'].'&type=Add">Add</a></td>';
-			    }
-			    else
-			    {
-				echo '<td><a href="comments.php?vlan='.$row['vlan'].'&type=Modify">'.$row['description'].'</a></td>';
-			    }
-			    if ( isset($_COOKIE['isadmin']) ) {
-			    	echo '<td><a href="#" data-href="delete_vlan.php?vlan='.$row['vlan'].'" data-toggle="modal" data-target="#confirm-delete"><button type="button" class="btn btn-info">Delete</button></a></td>';
-                            	echo '</tr>';
-			    }
-			    else {
-                                echo '<td>None</td>';
-                                echo '</tr>';
-			    }
+                       echo '<tr>';
+                       echo '<td><a href="hosts.php?vlan='.$row['vlan'].'">'.$row['vlan'].'</a></td>';
+                       echo '<td>'.$row['id_site'].'</td>';
+                       echo '<td>'.$row['iprange'].'</td>';
+                       echo '<td>'.$row['mask'].'</td>';
+                       if ($row['description'] == '') {
+                           echo '<td><a href="comments.php?vlan='.$row['vlan'].'&type=Add">Add</a></td>';
+                       } else {
+                           echo '<td><a href="comments.php?vlan='.$row['vlan'].'&type=Modify">'.$row['description'].'</a></td>';
+                       }
+                       if (isset($_COOKIE['isadmin'])) {
+                           echo '<td><a href="#" data-href="delete_vlan.php?vlan='.$row['vlan'].'" data-toggle="modal" data-target="#confirm-delete"><button type="button" class="btn btn-info">Delete</button></a></td>';
+                           echo '</tr>';
+                       } else {
+                           echo '<td>None</td>';
+                           echo '</tr>';
+                       }
                    }
                    Database::disconnect();
                   ?>

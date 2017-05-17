@@ -1,9 +1,9 @@
 <?php
-	include 'database.php';
-	$ip=$_POST['ip'];
-	$vlan=$_POST['vlan'];
-	$reserved=$_POST['reserved'];
-	$comment=$_POST['comment'];
+    include 'database.php';
+    $ip = $_POST['ip'];
+    $vlan = $_POST['vlan'];
+    $reserved = $_POST['reserved'];
+    $comment = $_POST['comment'];
         $pdo = Database::connect();
     $url = 'index.php';
         if ($ip) {

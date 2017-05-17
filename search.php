@@ -4,18 +4,15 @@
 ?>
 <body>
 	<?php
-		echo drawHeader();
-		if (!$_GET)
-		{
-			$search=none;
-		}
-		else
-		{
-			$search=$_GET["search"];
-		}
-		$sql = "SELECT count(*) AS total FROM hostnames WHERE hostname LIKE '%".$search."%' OR os LIKE '%".$search."%' OR ip LIKE '%".$search."%' OR mac LIKE '%".$search."%'";
-		$total_rows=$pdo->query($sql)->fetch();
-	?>
+        echo drawHeader();
+        if (!$_GET) {
+            $search = none;
+        } else {
+            $search = $_GET['search'];
+        }
+        $sql = "SELECT count(*) AS total FROM hostnames WHERE hostname LIKE '%".$search."%' OR os LIKE '%".$search."%' OR ip LIKE '%".$search."%' OR mac LIKE '%".$search."%'";
+        $total_rows = $pdo->query($sql)->fetch();
+    ?>
     <div class="container-fluid">
             <div class="row">
                 <h3>Search results for <?php echo $search; ?></h3>
