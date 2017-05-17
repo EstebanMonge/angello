@@ -5,7 +5,7 @@
 <body>
 <<<<<<< HEAD
 <?php
-	echo drawHeader();
+    echo drawHeader();
 ?>
 =======
 	<?php
