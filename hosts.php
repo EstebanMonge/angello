@@ -52,8 +52,8 @@
                         } else {
                             echo '<td><a href="comments.php?ip='.$row['ip'].'&vlan='.$row['vlan'].'&type=Modify">'.$row['comments'].'</a></td>';
                         }
-                         echo '<td><a href="ports.php?ip='.$row['ip'].'">Details</a></td>';
-                         echo '</tr>';
+                        echo '<td><a href="ports.php?ip='.$row['ip'].'">Details</a></td>';
+                        echo '</tr>';
                     }
                     Database::disconnect();
                     ?>
