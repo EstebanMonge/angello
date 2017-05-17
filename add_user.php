@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-        include 'header.php';
+        require 'header.php';
 ?>
 <html lang="en">
 <head>
@@ -11,7 +11,7 @@
     <script src="js/sortable.min.js"></script>
 </head>
 <body>
-	<?php
+    <?php
         echo drawHeader();
         $username = $_GET['username'];
     ?>

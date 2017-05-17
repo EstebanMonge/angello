@@ -1,5 +1,5 @@
 <?php
-    include 'database.php';
+    require 'database.php';
 
     $country = $_GET['country'];
         $pdo = Database::connect();

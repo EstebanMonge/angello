@@ -1,5 +1,5 @@
 <?php
-    include 'database.php';
+    require 'database.php';
 
     $vlan = $_POST['vlan'];
     $description = $_POST['description'];
@@ -15,9 +15,9 @@
         $ip_arr = explode('/', $iprange.'/'.$mask);
         $bin = '';
 
-        for ($i = 1; $i <= 32; $i++) {
-            $bin .= $ip_arr[1] >= $i ? '1' : '0';
-        }
+for ($i = 1; $i <= 32; $i++) {
+    $bin .= $ip_arr[1] >= $i ? '1' : '0';
+}
 
         $ip_arr[1] = bindec($bin);
 
@@ -27,11 +27,11 @@
         $bc = $nw | ~$nm;
         $bc_long = ip2long(long2ip($bc));
 
-        for ($zm = 1; ($nw + $zm) <= ($bc_long - 1); $zm++) {
-            $sql = "INSERT INTO hostnames (ip,vlan,hostname) VALUES ('".long2ip($nw + $zm)."','".$vlan."','free')";
-            $q = $pdo->prepare($sql);
-            $q->execute();
-        }
+for ($zm = 1; ($nw + $zm) <= ($bc_long - 1); $zm++) {
+    $sql = "INSERT INTO hostnames (ip,vlan,hostname) VALUES ('".long2ip($nw + $zm)."','".$vlan."','free')";
+    $q = $pdo->prepare($sql);
+    $q->execute();
+}
     Database::disconnect();
     header('Location: vlans.php'); /* Redirect browser */
     exit();

@@ -1,6 +1,6 @@
 <?php
 
-include 'database.php';
+require 'database.php';
 if (!isset($_COOKIE['username']) || !isset($_COOKIE['password'])) {
     header('Location: login.php');
 }

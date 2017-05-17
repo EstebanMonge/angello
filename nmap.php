@@ -32,9 +32,9 @@ try {
         case strstr($host->getOS(), 'Linux'):
             $os = 'Linux';
             break;
-    }
+        }
         $sql = "UPDATE hostnames SET ip = '".$host->getAddress(ipv4)."', hostname = '".$host->getHostname()."', os = '".$os."', mac = '".$host->getAddress(mac)."', vlan = '".$argv[2]."' WHERE ip = '".$host->getAddress(ipv4)."' AND vlan = '".$argv[2]."'";
-//	$sql = "INSERT INTO hostnames (ip,hostname, os, mac,vlan) VALUES ('".$host->getAddress(ipv4)."', '".$host->getHostname()."', '".$os."','".$host->getAddress(mac)."','".$argv[2]."')";
+        //	$sql = "INSERT INTO hostnames (ip,hostname, os, mac,vlan) VALUES ('".$host->getAddress(ipv4)."', '".$host->getHostname()."', '".$os."','".$host->getAddress(mac)."','".$argv[2]."')";
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $pdo->exec($sql);

@@ -1,12 +1,12 @@
 <?php
 
-include 'database.php';
+require 'database.php';
         $pdo = Database::connect();
         $sql = "SELECT password,is_admin FROM users WHERE username LIKE '".$_POST['username']."'";
-        foreach ($pdo->query($sql) as $row) {
-            $password = $row['password'];
-            $isadmin = $row['is_admin'];
-        }
+foreach ($pdo->query($sql) as $row) {
+    $password = $row['password'];
+    $isadmin = $row['is_admin'];
+}
     Database::disconnect();
 
 if (isset($_POST['username']) && isset($_POST['password'])) {

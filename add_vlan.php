@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-        include 'header.php';
+        require 'header.php';
 ?>
 <body>
 <<<<<<< HEAD
@@ -8,13 +8,13 @@
     echo drawHeader();
 ?>
 =======
-	<?php
+    <?php
         echo drawHeader();
-        if (!$_GET) {
-            $vlan = 128;
-        } else {
-            $vlan = $_GET['vlan'];
-        }
+    if (!$_GET) {
+        $vlan = 128;
+    } else {
+        $vlan = $_GET['vlan'];
+    }
     ?>
 >>>>>>> a0904be705d6269af051b9e9ae3184873b74e65b
     <div class="container-fluid">

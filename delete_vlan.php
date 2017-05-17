@@ -1,5 +1,5 @@
 <?php
-    include 'database.php';
+    require 'database.php';
 
     $vlan = $_GET['vlan'];
         $pdo = Database::connect();

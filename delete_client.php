@@ -1,5 +1,5 @@
 <?php
-    include 'database.php';
+    require 'database.php';
 
     $client = $_GET['client'];
         $pdo = Database::connect();

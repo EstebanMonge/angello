@@ -1,8 +1,8 @@
 <?php
-        include 'header.php';
+        require 'header.php';
 ?>
 <body>
-	<?php
+    <?php
            echo drawHeader();
        $ip = $_GET['ip'];
     ?>
@@ -18,18 +18,18 @@
                     </tr>
                   </thead>
                   <tbody>
-                  <?php
-                   $pdo = Database::connect();
-                   $sql = 'SELECT port_number,type,name FROM services WHERE ip LIKE "'.$ip.'" ORDER BY ip DESC';
-                   foreach ($pdo->query($sql) as $row) {
-                       echo '<tr>';
-                       echo '<td>'.$row['port_number'].'</td>';
-                       echo '<td>'.$row['type'].'</td>';
-                       echo '<td>'.$row['name'].'</td>';
-                       echo '</tr>';
-                   }
-                   Database::disconnect();
-                  ?>
+                    <?php
+                    $pdo = Database::connect();
+                    $sql = 'SELECT port_number,type,name FROM services WHERE ip LIKE "'.$ip.'" ORDER BY ip DESC';
+                    foreach ($pdo->query($sql) as $row) {
+                        echo '<tr>';
+                        echo '<td>'.$row['port_number'].'</td>';
+                        echo '<td>'.$row['type'].'</td>';
+                        echo '<td>'.$row['name'].'</td>';
+                        echo '</tr>';
+                    }
+                    Database::disconnect();
+                    ?>
                   </tbody>
             </table>
         </div>

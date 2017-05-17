@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-        include 'header.php';
+        require 'header.php';
 ?>
 <body>
 <?php
@@ -20,8 +20,8 @@
     <input type="text" class="form-control" name="site">
     <label for="country">Country:</label>
     <select class="form-control" name="country">
-	<option></option>;
-	<?php
+    <option></option>;
+    <?php
     foreach ($countries as $row) {
         echo '<option value="'.$row['id_country'].'">'.$row['name'].'</option>';
     }
@@ -29,8 +29,8 @@
     </select>
     <label for="client">Client name:</label>
     <select class="form-control" name="client">
-	<option></option>;
-	<?php
+    <option></option>;
+    <?php
     foreach ($clients as $row) {
         echo '<option value="'.$row['id_client'].'">'.$row['name'].'</option>';
     }

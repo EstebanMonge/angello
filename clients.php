@@ -1,8 +1,8 @@
 <?php
-        include 'header.php';
+        require 'header.php';
 ?>
 <body>
-	<?php
+    <?php
         echo drawHeader();
     ?>
     <div class="container-fluid">
@@ -10,7 +10,7 @@
                 <h3>Clients</h3>
             </div>
             <div class="pull-right" style="padding-bottom:20px">
-	    <?php
+        <?php
         if (isset($_COOKIE['isadmin'])) {
             echo '<a href="add_client.php" class="btn btn-info" role="button">Add Client</a>';
         }
@@ -26,27 +26,27 @@
                     </tr>
                   </thead>
                   <tbody>
-                  <?php
-                   $pdo = Database::connect();
-                   $sql = 'SELECT * FROM clients ORDER BY name ASC';
-                   foreach ($pdo->query($sql) as $row) {
-                       echo '<tr>';
-                       echo '<td>'.$row['name'].'</td>';
-                       if ($row['description'] == '') {
-                           echo '<td><a href="comments.php?client='.$row['client'].'&type=Add">Add</a></td>';
-                       } else {
-                           echo '<td><a href="comments.php?client='.$row['client'].'&type=Modify">'.$row['description'].'</a></td>';
-                       }
-                       if (isset($_COOKIE['isadmin'])) {
-                           echo '<td><a href="#" data-href="delete_client.php?client='.$row['name'].'" data-toggle="modal" data-target="#confirm-delete"><button type="button" class="btn btn-info">Delete</button></a></td>';
-                           echo '</tr>';
-                       } else {
-                           echo '<td>None</td>';
-                           echo '</tr>';
-                       }
-                   }
-                   Database::disconnect();
-                  ?>
+                    <?php
+                    $pdo = Database::connect();
+                    $sql = 'SELECT * FROM clients ORDER BY name ASC';
+                    foreach ($pdo->query($sql) as $row) {
+                        echo '<tr>';
+                        echo '<td>'.$row['name'].'</td>';
+                        if ($row['description'] == '') {
+                            echo '<td><a href="comments.php?client='.$row['client'].'&type=Add">Add</a></td>';
+                        } else {
+                            echo '<td><a href="comments.php?client='.$row['client'].'&type=Modify">'.$row['description'].'</a></td>';
+                        }
+                        if (isset($_COOKIE['isadmin'])) {
+                            echo '<td><a href="#" data-href="delete_client.php?client='.$row['name'].'" data-toggle="modal" data-target="#confirm-delete"><button type="button" class="btn btn-info">Delete</button></a></td>';
+                            echo '</tr>';
+                        } else {
+                            echo '<td>None</td>';
+                            echo '</tr>';
+                        }
+                    }
+                    Database::disconnect();
+                    ?>
                   </tbody>
             </table>
 <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -65,9 +65,9 @@
         </div>
     </div> <!-- /container -->
     <script>
-	$('#confirm-delete').on('show.bs.modal', function(e) {
-	$(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
-	});
+    $('#confirm-delete').on('show.bs.modal', function(e) {
+    $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+    });
     </script>
   </body>
 </html>

@@ -1,5 +1,5 @@
 <?php
-    include 'database.php';
+    require 'database.php';
 
     $site = $_POST['site'];
     echo $client = $_POST['client'];

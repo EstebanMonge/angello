@@ -14,13 +14,13 @@ class Database
     public static function connect()
     {
         // One connection through whole application
-       if (null == self::$cont) {
-           try {
-               self::$cont = new PDO('sqlite:/'.self::$dbPath);
-           } catch (PDOException $e) {
-               die($e->getMessage());
-           }
-       }
+        if (null == self::$cont) {
+            try {
+                self::$cont = new PDO('sqlite:/'.self::$dbPath);
+            } catch (PDOException $e) {
+                die($e->getMessage());
+            }
+        }
 
         return self::$cont;
     }

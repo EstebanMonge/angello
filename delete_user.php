@@ -1,5 +1,5 @@
 <?php
-    include 'database.php';
+    require 'database.php';
 
     $username = $_GET['username'];
         $pdo = Database::connect();

@@ -1,5 +1,5 @@
 <?php
-    include 'database.php';
+    require 'database.php';
 
     $country = $_POST['country'];
     $description = $_POST['description'];

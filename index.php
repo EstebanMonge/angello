@@ -1,27 +1,27 @@
 <?php
-        include 'header.php';
+        require 'header.php';
 ?>
  
 <body>
-	<?php
+    <?php
         echo drawHeader();
-        if (!$_GET) {
-            $vlan = 128;
-        } else {
-            $vlan = $_GET['vlan'];
-        }
+    if (!$_GET) {
+        $vlan = 128;
+    } else {
+        $vlan = $_GET['vlan'];
+    }
     ?>
     <div class="container-fluid">
             <div class="row">
-		    <div class="col-sm-4">
-			<a href="vlans.php" title="Admin VLANs">
-				<img src="icons/flaticon/svg/network.svg" />
-			</a>
-		    </div>
-    		    <div class="col-sm-4">
-			<a data-toggle="modal" href="#VlanModal" title="Show hosts">
-				<img src="icons/flaticon/svg/television-1.svg" />
-			</a>
+            <div class="col-sm-4">
+            <a href="vlans.php" title="Admin VLANs">
+                <img src="icons/flaticon/svg/network.svg" />
+            </a>
+            </div>
+                <div class="col-sm-4">
+            <a data-toggle="modal" href="#VlanModal" title="Show hosts">
+                <img src="icons/flaticon/svg/television-1.svg" />
+            </a>
                         <!-- Modal -->
                         <div class="modal fade" id="VlanModal" role="dialog">
                                 <div class="modal-dialog">
@@ -35,9 +35,9 @@
                                                                                 <?php
                                                                                         $pdo = Database::connect();
                                                                                         $sql = 'SELECT * FROM vlans ORDER BY vlan ASC';
-                                                                                        foreach ($pdo->query($sql) as $row) {
-                                                                                            echo '<option value="'.$row['vlan'].'">'.$row['vlan'].'</option>';
-                                                                                        }
+                                                                                foreach ($pdo->query($sql) as $row) {
+                                                                                    echo '<option value="'.$row['vlan'].'">'.$row['vlan'].'</option>';
+                                                                                }
                                                                                         Database::disconnect();
                                         ?>
                                                                         </select>
@@ -47,11 +47,11 @@
                                         </div>
                                 </div>
                         </div>
-		</div>
-		<div class="col-sm-4">
-			<a href="scans.php" title="Admin scans">
-				<img src="icons/flaticon/svg/list.svg" />
-			</a>
+        </div>
+        <div class="col-sm-4">
+            <a href="scans.php" title="Admin scans">
+                <img src="icons/flaticon/svg/list.svg" />
+            </a>
             </div>
     </div><!-- /container -->
   </body>
