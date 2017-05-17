@@ -4,12 +4,12 @@
 ?>
 <body>
 <?php
-	echo drawHeader();
+    echo drawHeader();
         $pdo = Database::connect();
-        $sql = "select * from countries ORDER BY name ASC";
-	$countries = $pdo->query($sql); 
-        $sql = "select * from clients ORDER BY name ASC";
-	$clients = $pdo->query($sql); 
+        $sql = 'select * from countries ORDER BY name ASC';
+    $countries = $pdo->query($sql);
+        $sql = 'select * from clients ORDER BY name ASC';
+    $clients = $pdo->query($sql);
 ?>
     <div class="container-fluid">
             <div class="row">
@@ -22,19 +22,19 @@
     <select class="form-control" name="country">
 	<option></option>;
 	<?php
-	foreach ($countries as $row) {
-		echo "<option value=\"".$row['id_country']."\">".$row['name']."</option>";
-	}
-	?>
+    foreach ($countries as $row) {
+        echo '<option value="'.$row['id_country'].'">'.$row['name'].'</option>';
+    }
+    ?>
     </select>
     <label for="client">Client name:</label>
     <select class="form-control" name="client">
 	<option></option>;
 	<?php
-	foreach ($clients as $row) {
-		echo "<option value=\"".$row['id_client']."\">".$row['name']."</option>";
-	}
-	?>
+    foreach ($clients as $row) {
+        echo '<option value="'.$row['id_client'].'">'.$row['name'].'</option>';
+    }
+    ?>
     </select>
     <label for="description">Comment:</label>
     <input type="text" class="form-control" name="description">
