@@ -1,4 +1,14 @@
 <?php
+/**
+ * Angello IP Management
+ * PHP Version 7
+ *
+ * @category PHP
+ * @package  Angello
+ * @author   Esteban Monge <estebanmonge@riseup.net>
+ * @license  https://opensource.org/licenses/BSD-2-Clause BSD
+ * @link     http://www.hashbangcode.com/
+ */
 
 class database
 {

@@ -1,13 +1,18 @@
-<!DOCTYPE html>
 <?php
+/**
+ * Angello IP Management
+ * PHP Version 7
+ *
+ * @category PHP
+ * @package  Angello
+ * @author   Esteban Monge <estebanmonge@riseup.net>
+ * @license  https://opensource.org/licenses/BSD-2-Clause BSD
+ * @link     http://www.hashbangcode.com/
+ */
+
         require 'header.php';
 ?>
 <body>
-<<<<<<< HEAD
-<?php
-    echo drawHeader();
-?>
-=======
     <?php
         echo drawHeader();
     if (!$_GET) {
@@ -16,7 +21,6 @@
         $vlan = $_GET['vlan'];
     }
     ?>
->>>>>>> a0904be705d6269af051b9e9ae3184873b74e65b
     <div class="container-fluid">
             <div class="row">
                 <h3>Add VLAN</h3>
