@@ -8,7 +8,7 @@
 <body>
 	<?php
            echo drawHeader();
-	?>
+    ?>
     <div class="container-fluid">
             <div class="row">
                 <h3>Hostnames</h3>
@@ -36,9 +36,9 @@
  			<input type="hidden" name="vlan" value="<?php echo $vlan?>">
  		</div>
 		<?php if ($ip) {
-			echo '<label for="reserved"><input type="checkbox" value="reserved" name="reserved">Reserved?</label>';
-		}
-		?>
+                echo '<label for="reserved"><input type="checkbox" value="reserved" name="reserved">Reserved?</label>';
+            }
+        ?>
   		<button type="submit" class="btn btn-default">Submit</button>
 		</form>
             </div> <!-- /row -->
