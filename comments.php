@@ -1,5 +1,5 @@
 <?php
-        include 'header.php';
+    include 'header.php';
     $ip = $_GET['ip'];
     $vlan = $_GET['vlan'];
     $type = $_GET['type'];
@@ -8,15 +8,11 @@
 <body>
 	<?php
            echo drawHeader();
-<<<<<<< HEAD
 	?>
     <div class="container-fluid">
-=======
-    ?>
             <div class="row">
                 <h3>Hostnames</h3>
             </div>
->>>>>>> a0904be705d6269af051b9e9ae3184873b74e65b
             <div class="row">
                 <h3><?php echo $type?> comment for <?php 
         if ($ip) {
@@ -31,7 +27,7 @@
 		</h3>
 		<form class="form-inline" role="form" action="insert_comment.php" method="POST">
  		<div class="form-group">
-			<TEXTAREA NAME="comment" COLS=40 ROWS=6><?php
+            <TEXTAREA NAME="comment" COLS=40 ROWS=6><?php
             foreach ($pdo->query($sql) as $row) {
                 echo $row['comments'];
             }
