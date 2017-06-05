@@ -3,8 +3,8 @@
 ?>
 <body>
     <?php
-           echo drawHeader();
-       $ip = $_GET['ip'];
+       echo drawHeader();
+       $ip = htmlentities($_GET["ip"],  ENT_QUOTES,  "utf-8");
     ?>
     <div class="container-fluid">
             <div class="row">

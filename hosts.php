@@ -8,7 +8,7 @@
     if (!$_GET) {
         $vlan = 128;
     } else {
-        $vlan = $_GET['vlan'];
+        $vlan = htmlentities($_GET["vlan"],  ENT_QUOTES,  "utf-8");
     }
         $sql = "select count(*) AS total from hostnames where vlan='".$vlan."'";
         $total_ip = $pdo->query($sql)->fetch();

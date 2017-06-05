@@ -10,9 +10,9 @@
  * @link     http://www.hashbangcode.com/
  */
     require 'header.php';
-    $ip = $_GET['ip'];
-    $vlan = $_GET['vlan'];
-    $type = $_GET['type'];
+    $ip =  htmlentities($_GET["ip"],  ENT_QUOTES,  "utf-8");
+    $vlan =  htmlentities($_GET["vlan"],  ENT_QUOTES,  "utf-8");
+    $type =  htmlentities($_GET["type"],  ENT_QUOTES,  "utf-8");
     $pdo = Database::connect();
 ?>
 <body>
