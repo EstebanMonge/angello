@@ -19,7 +19,7 @@ if (!is_file($argv[3])) {
          * $_FILES array of the accept script. and the at sign '@' is required before the
          * file name.
          */
-        $post = ['extra_info' => '123456', 'file_contents'=>'@'.$file_name_with_full_path];
+        $post = array('extra_info' => '123456', 'file_contents'=>'@'.$file_name_with_full_path);
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $target_url);
