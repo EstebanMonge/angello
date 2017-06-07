@@ -6,7 +6,6 @@ This HTML and PHP front end allows you to show nmap XML reports in a pretty way
 Working in process... Help wanted!
 
 # Screenshots
-![Main Screen](/angello/screenshots/shot-2017-06-06_22-56-12.jpg?raw=true "Main Screen")
 ![Main Screen](/screenshots/shot-2017-06-06_22-56-12.jpg?raw=true "Main Screen")
 
 # Installation
