@@ -49,6 +49,9 @@ function drawHeader()
     }
     $output .= '</ul>
 				</li>
+				<li class="nav-item">
+					<a href="scans.php">Audit Scans</a>
+				</li>
                                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Ubication <span class="caret"></span></a>
 					<ul class="dropdown-menu">
             					<li><a href="countries.php">Countries</a></li>

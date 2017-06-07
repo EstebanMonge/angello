@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/local/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.01 scan initiated Tue Jun  6 11:59:22 2017 as: /usr/local/bin/nmap -sn -oX /opt/scripts/nmap/audit_net_131_XML 10.149.131.0/24 -->
+<nmaprun scanner="nmap" args="/usr/local/bin/nmap -sn -oX /opt/scripts/nmap/audit_net_131_XML 10.149.131.0/24" start="1496771962" startstr="Tue Jun  6 11:59:22 2017" version="7.01" xmloutputversion="1.04">
+<verbose level="0"/>
+<debugging level="0"/>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.149.131.1" addrtype="ipv4"/>
+<address addr="00:00:0C:07:AC:83" addrtype="mac" vendor="Cisco Systems"/>
+<hostnames>
+</hostnames>
+<times srtt="744" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.149.131.2" addrtype="ipv4"/>
+<address addr="88:43:E1:D9:66:7F" addrtype="mac" vendor="Cisco Systems"/>
+<hostnames>
+</hostnames>
+<times srtt="807" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.149.131.3" addrtype="ipv4"/>
+<address addr="00:0B:FC:FE:1B:0A" addrtype="mac" vendor="Cisco Systems"/>
+<hostnames>
+</hostnames>
+<times srtt="837" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.149.131.4" addrtype="ipv4"/>
+<address addr="68:EF:BD:29:E9:3F" addrtype="mac" vendor="Cisco Systems"/>
+<hostnames>
+</hostnames>
+<times srtt="799" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.149.131.5" addrtype="ipv4"/>
+<address addr="00:1B:24:93:40:BB" addrtype="mac" vendor="Quanta Computer"/>
+<hostnames>
+</hostnames>
+<times srtt="1246" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.149.131.6" addrtype="ipv4"/>
+<address addr="04:7D:7B:FD:7F:B5" addrtype="mac" vendor="Quanta Computer"/>
+<hostnames>
+</hostnames>
+<times srtt="1333" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.149.131.10" addrtype="ipv4"/>
+<address addr="00:0B:FC:FE:1B:0A" addrtype="mac" vendor="Cisco Systems"/>
+<hostnames>
+<hostname name="sa.ice.go.cr" type="PTR"/>
+</hostnames>
+<times srtt="2265" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.149.131.11" addrtype="ipv4"/>
+<address addr="00:0B:FC:FE:1B:0A" addrtype="mac" vendor="Cisco Systems"/>
+<hostnames>
+<hostname name="cramer.ice.go.cr" type="PTR"/>
+</hostnames>
+<times srtt="6761" rttvar="6761" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.149.131.13" addrtype="ipv4"/>
+<address addr="00:0B:FC:FE:1B:0A" addrtype="mac" vendor="Cisco Systems"/>
+<hostnames>
+<hostname name="wbsf.ice.go.cr" type="PTR"/>
+</hostnames>
+<times srtt="497" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.149.131.14" addrtype="ipv4"/>
+<address addr="00:0B:FC:FE:1B:0A" addrtype="mac" vendor="Cisco Systems"/>
+<hostnames>
+<hostname name="router.ice.go.cr" type="PTR"/>
+</hostnames>
+<times srtt="690" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.149.131.15" addrtype="ipv4"/>
+<address addr="00:0B:FC:FE:1B:0A" addrtype="mac" vendor="Cisco Systems"/>
+<hostnames>
+<hostname name="som.ice.go.cr" type="PTR"/>
+</hostnames>
+<times srtt="911" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.149.131.16" addrtype="ipv4"/>
+<address addr="00:0B:FC:FE:1B:0A" addrtype="mac" vendor="Cisco Systems"/>
+<hostnames>
+<hostname name="usm.ice.go.cr" type="PTR"/>
+</hostnames>
+<times srtt="1114" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.149.131.31" addrtype="ipv4"/>
+<address addr="00:0B:FC:FE:1B:0A" addrtype="mac" vendor="Cisco Systems"/>
+<hostnames>
+</hostnames>
+<times srtt="1001" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.149.131.100" addrtype="ipv4"/>
+<address addr="00:1A:64:DD:D4:BC" addrtype="mac" vendor="IBM"/>
+<hostnames>
+<hostname name="vdm1.icetel.ice" type="PTR"/>
+</hostnames>
+<times srtt="135" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.149.131.101" addrtype="ipv4"/>
+<address addr="00:1A:64:DD:D0:80" addrtype="mac" vendor="IBM"/>
+<hostnames>
+</hostnames>
+<times srtt="112" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.149.131.102" addrtype="ipv4"/>
+<address addr="CA:1C:47:7D:70:04" addrtype="mac"/>
+<hostnames>
+</hostnames>
+<times srtt="193" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.149.131.104" addrtype="ipv4"/>
+<address addr="EA:70:0B:8A:2A:06" addrtype="mac"/>
+<hostnames>
+</hostnames>
+<times srtt="235" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.149.131.105" addrtype="ipv4"/>
+<address addr="CE:3E:EE:39:5E:06" addrtype="mac"/>
+<hostnames>
+</hostnames>
+<times srtt="240" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.149.131.107" addrtype="ipv4"/>
+<address addr="00:21:5E:F7:76:6C" addrtype="mac" vendor="IBM"/>
+<hostnames>
+</hostnames>
+<times srtt="164" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.149.131.108" addrtype="ipv4"/>
+<address addr="2A:68:8A:16:A8:06" addrtype="mac"/>
+<hostnames>
+</hostnames>
+<times srtt="200" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.149.131.109" addrtype="ipv4"/>
+<address addr="2A:68:87:D8:66:06" addrtype="mac"/>
+<hostnames>
+</hostnames>
+<times srtt="194" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.149.131.111" addrtype="ipv4"/>
+<address addr="00:21:5E:F7:76:84" addrtype="mac" vendor="IBM"/>
+<hostnames>
+</hostnames>
+<times srtt="160" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.149.131.112" addrtype="ipv4"/>
+<address addr="DE:81:23:2B:34:06" addrtype="mac"/>
+<hostnames>
+</hostnames>
+<times srtt="234" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.149.131.115" addrtype="ipv4"/>
+<address addr="00:1A:64:DD:96:06" addrtype="mac" vendor="IBM"/>
+<hostnames>
+<hostname name="vdm2.icetel.ice" type="PTR"/>
+</hostnames>
+<times srtt="111" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.149.131.172" addrtype="ipv4"/>
+<address addr="56:EE:F0:4D:46:04" addrtype="mac"/>
+<hostnames>
+</hostnames>
+<times srtt="313" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="10.149.131.173" addrtype="ipv4"/>
+<address addr="DE:81:2C:62:5E:06" addrtype="mac"/>
+<hostnames>
+<hostname name="vmds.ice.go.cr" type="PTR"/>
+</hostnames>
+<times srtt="410" rttvar="5000" to="100000"/>
+</host>
+<host><status state="up" reason="localhost-response" reason_ttl="0"/>
+<address addr="10.149.131.145" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</host>
+<runstats><finished time="1496771963" timestr="Tue Jun  6 11:59:23 2017" elapsed="1.05" summary="Nmap done at Tue Jun  6 11:59:23 2017; 256 IP addresses (27 hosts up) scanned in 1.05 seconds" exit="success"/><hosts up="27" down="229" total="256"/>
+</runstats>
+</nmaprun>

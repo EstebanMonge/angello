@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/local/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.01 scan initiated Tue Jun  6 11:59:23 2017 as: /usr/local/bin/nmap -sn -oX /opt/scripts/nmap/audit_net_186_XML 10.149.186.0/24 -->
+<nmaprun scanner="nmap" args="/usr/local/bin/nmap -sn -oX /opt/scripts/nmap/audit_net_186_XML 10.149.186.0/24" start="1496771963" startstr="Tue Jun  6 11:59:23 2017" version="7.01" xmloutputversion="1.04">
+<verbose level="0"/>
+<debugging level="0"/>
+<runstats><finished time="1496772169" timestr="Tue Jun  6 12:02:49 2017" elapsed="206.19" summary="Nmap done at Tue Jun  6 12:02:49 2017; 256 IP addresses (0 hosts up) scanned in 206.19 seconds" exit="success"/><hosts up="0" down="256" total="256"/>
+</runstats>
+</nmaprun>
