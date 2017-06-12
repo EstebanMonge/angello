@@ -5,6 +5,20 @@ This HTML and PHP front end allows you to show nmap XML reports in a pretty way
 
 Working in process... Help wanted!
 
+# Screenshots
+
+## Main Screen
+![Main Screen](/screenshots/shot-2017-06-06_23-03-58.jpg?raw=true "Main Screen")
+
+## VLANs Screen
+![Main Screen](/screenshots/shot-2017-06-06_23-04-06.jpg?raw=true "Main Screen")
+
+## Logs Screen
+![Main Screen](/screenshots/shot-2017-06-06_23-04-27.jpg?raw=true "Main Screen")
+
+## Scan Screen Beta Feature Incomplete
+![Main Screen](/screenshots/shot-2017-06-06_23-04-13.jpg?raw=true "Main Screen")
+
 # Installation
 Install PHP Pear
 pear install net_nmap
