@@ -30,11 +30,11 @@
                   <tbody>
                     <?php
                     $pdo = Database::connect();
-                    $sql = 'SELECT * FROM scans ORDER BY id ASC';
+                    $sql = 'SELECT * FROM scans ORDER BY id DESC';
                     foreach ($pdo->query($sql) as $row) {
                         echo '<tr>';
                         echo '<td>'.$row['date'].'</td>';
-                        echo '<td><a href="hostnames_scan.php?id='.$row['id'].'">'.$row['vlan'].'</a></td>';
+                        echo '<td><a href="hosts_audit.php?scanid='.$row['id'].'&vlan='.$row['vlan'].'">'.$row['vlan'].'</a></td>';
                     }
                     Database::disconnect();
                     ?>
