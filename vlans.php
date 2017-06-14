@@ -44,9 +44,9 @@
                         echo '<td>'.$row['iprange'].'</td>';
                         echo '<td>'.$row['mask'].'</td>';
                         if ($row['description'] == '') {
-                            echo '<td><a href="comments.php?vlan='.$row['vlan'].'&type=Add">Add</a></td>';
+                            echo '<td><a href="comments.php?vlan='.$row['vlan'].'&type=Add&item=Description">Add</a></td>';
                         } else {
-                            echo '<td><a href="comments.php?vlan='.$row['vlan'].'&type=Modify">'.$row['description'].'</a></td>';
+                            echo '<td><a href="comments.php?vlan='.$row['vlan'].'&type=Modify&item=Description">'.$row['description'].'</a></td>';
                         }
                         if (isset($_COOKIE['isadmin'])) {
                             echo '<td><a href="#" data-href="delete_vlan.php?vlan='.$row['vlan'].'" data-toggle="modal" data-target="#confirm-delete"><button type="button" class="btn btn-info">Delete</button></a></td>';

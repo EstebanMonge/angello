@@ -19,7 +19,7 @@
     ?>
     <div class="container-fluid">
             <div class="row">
-                <h3>Hosts for vlan <?php echo $vlan; ?></h3>
+                <h3>Hosts for VLAN <?php echo $vlan; ?></h3>
         <p class="text-right"><?php echo '<strong>'.number_format((float) $perc_used_ip, 2, '.', '').'%</strong> network usage and <strong>'.$free_ip[free].' free</strong> IPs of '.$total_ip[total]; ?></p>
         <div class="pull-right" style="padding-bottom:20px">
             <p><button id="export" data-export="export" type="button" class="btn btn-info">Export</button></p>
@@ -31,7 +31,9 @@
                       <th>DNS <span class="caret"></span></th>
                       <th>OS <span class="caret"></span></th>
                       <th>MAC <span class="caret"></span></th>
-                      <th>Interface <span class="caret"></span></th>
+                      <th>Host Interface <span class="caret"></span></th>
+                      <th>Switch <span class="caret"></span></th>
+                      <th>Switch Interface <span class="caret"></span></th>
                       <th>Comment <span class="caret"></span></th>
                       <th>Services</th>
                     </tr>
@@ -46,11 +48,25 @@
                         echo '<td>'.$row['hostname'].'</td>';
                         echo '<td>'.$row['os'].'</td>';
                         echo '<td>'.$row['mac'].'</td>';
-                        echo '<td>'.$row['interface'].'</td>';
-                        if ($row['comments'] == '') {
-                            echo '<td><a href="comments.php?ip='.$row['ip'].'&vlan='.$row['vlan'].'&type=Add">Add</a></td>';
+                        if ($row['interface'] == '') {
+                            echo '<td><a href="comments.php?ip='.$row['ip'].'&vlan='.$row['vlan'].'&type=Add&item=Interface">Add</a></td>';
                         } else {
-                            echo '<td><a href="comments.php?ip='.$row['ip'].'&vlan='.$row['vlan'].'&type=Modify">'.$row['comments'].'</a></td>';
+                            echo '<td><a href="comments.php?ip='.$row['ip'].'&vlan='.$row['vlan'].'&type=Modify&item=Interface">'.$row['interface'].'</a></td>';
+                        }
+                        if ($row['switch'] == '') {
+                            echo '<td><a href="comments.php?ip='.$row['ip'].'&vlan='.$row['vlan'].'&type=Add&item=Switch">Add</a></td>';
+                        } else {
+                            echo '<td><a href="comments.php?ip='.$row['ip'].'&vlan='.$row['vlan'].'&type=Modify&item=Switch">'.$row['switch'].'</a></td>';
+                        }
+                        if ($row['switch_interface'] == '') {
+                            echo '<td><a href="comments.php?ip='.$row['ip'].'&vlan='.$row['vlan'].'&type=Add&item=Switch Interface">Add</a></td>';
+                        } else {
+                            echo '<td><a href="comments.php?ip='.$row['ip'].'&vlan='.$row['vlan'].'&type=Modify&item=Switch Interface">'.$row['switch_interface'].'</a></td>';
+			}
+                        if ($row['comments'] == '') {
+                            echo '<td><a href="comments.php?ip='.$row['ip'].'&vlan='.$row['vlan'].'&type=Add&item=Comment">Add</a></td>';
+                        } else {
+                            echo '<td><a href="comments.php?ip='.$row['ip'].'&vlan='.$row['vlan'].'&type=Modify&item=Comment">'.$row['comments'].'</a></td>';
                         }
                         echo '<td><a href="ports.php?ip='.$row['ip'].'">Details</a></td>';
                         echo '</tr>';

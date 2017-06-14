@@ -61,6 +61,8 @@ CREATE TABLE `hostnames` (
   `vlan` char(100) DEFAULT NULL,
   `interface` char(100) DEFAULT NULL,
   `reserved` int(11) DEFAULT NULL,
+  `switch` char(100) DEFAULT NULL,
+  `switch_interface` char(100) DEFAULT NULL,
   PRIMARY KEY (`ip`),
   KEY `vlan` (`vlan`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -82,6 +84,8 @@ CREATE TABLE `hostnames_audit` (
   `vlan` char(100) DEFAULT NULL,
   `interface` char(100) DEFAULT NULL,
   `scanid` int(11) DEFAULT NULL,
+  `switch` char(100) DEFAULT NULL,
+  `switch_interface` char(100) DEFAULT NULL,
   KEY `scanid` (`scanid`),
   CONSTRAINT `hostnames_audit_ibfk_1` FOREIGN KEY (`scanid`) REFERENCES `scans` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -115,7 +119,7 @@ CREATE TABLE `scans` (
   `date` datetime DEFAULT NULL,
   `vlan` char(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -202,4 +206,4 @@ CREATE TABLE `vlans` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-06 22:54:07
+-- Dump completed on 2017-06-14 15:01:01
