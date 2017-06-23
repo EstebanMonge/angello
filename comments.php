@@ -14,6 +14,7 @@
     $vlan =  htmlentities($_GET["vlan"],  ENT_QUOTES,  "utf-8");
     $type =  htmlentities($_GET["type"],  ENT_QUOTES,  "utf-8");
     $item =  htmlentities($_GET["item"],  ENT_QUOTES,  "utf-8");
+    $source =  htmlentities($_GET["source"],  ENT_QUOTES,  "utf-8");
     $reserved = 0;
     $pdo = Database::connect();
 ?>
@@ -55,6 +56,7 @@
        <input type="hidden" name="ip" value="<?php echo $ip?>">
        <input type="hidden" name="vlan" value="<?php echo $vlan?>">
        <input type="hidden" name="item" value="<?php echo $item?>">
+       <input type="hidden" name="source" value="<?php echo $source?>">
      </div>
         <?php
         if ($item == "Comment") {

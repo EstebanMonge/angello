@@ -9,15 +9,20 @@
  * @license  https://opensource.org/licenses/BSD-2-Clause BSD 
  * @link     http://www.hashbangcode.com/
  */
-        require 'header.php';
 ?>
 <body>
     <?php
-        echo drawHeader();
+    require 'header.php';
+    echo drawHeader();
+    try {
     if (!$_GET) {
         $vlan = 128;
     } else {
         $vlan = $_GET['vlan'];
+    }
+    }
+    catch (Exception $e){
+       echo "Problem detected: ".$e->getMessage()."\n";
     }
     ?>
     <div class="container-fluid">
@@ -42,13 +47,18 @@
                                                                         <select name="vlan" onchange="this.form.submit();">
                                                                                 <option>Select VLAN</option>
                                                                                 <?php
-                                                                                        $pdo = Database::connect();
-                                                                                        $sql = 'SELECT * FROM vlans ORDER BY vlan ASC';
+										try {
+                                                                                $pdo = Database::connect();
+                                                                                $sql = 'SELECT * FROM vlans ORDER BY vlan ASC';
                                                                                 foreach ($pdo->query($sql) as $row) {
                                                                                     echo '<option value="'.$row['vlan'].'">'.$row['vlan'].'</option>';
                                                                                 }
-                                                                                        Database::disconnect();
-                                        ?>
+                                                                                Database::disconnect();
+										}
+										catch (Exception $e){
+											echo "Problem detected: ".$e->getMessage()."\n";
+										}
+                                                                                ?>
                                                                         </select>
                                                                 </div>
                                                         </form>

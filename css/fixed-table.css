@@ -1,0 +1,28 @@
+.table-fixed thead, .table-fixed tbody, .table-fixed tr, .table-fixed td, .table-fixed th { display: block; }
+
+.table-fixed tr:after {
+   content: '';
+   display: block;
+   clear: both;
+}
+
+.table-fixed tbody {
+   height: 600px;
+   overflow-y: auto;
+}
+
+
+.table-fixed-hosts tbody td, .table-fixed-hosts thead th {
+   width: 11%;
+   float: left;
+}
+
+.table-fixed-audit tbody td, .table-fixed-audit thead th {
+   width: 20%;
+   float: left;
+}
+
+.table-fixed-compare tbody td, .table-fixed-compare thead th {
+   width: 33.3%;
+   float: left;
+}

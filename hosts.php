@@ -24,7 +24,7 @@
         <div class="pull-right" style="padding-bottom:20px">
             <p><button id="export" data-export="export" type="button" class="btn btn-info">Export</button></p>
         </div>
-                <table id="hosts_table" class="table table-striped table-bordered" data-sortable>
+                <table id="hosts_table" class="table table-striped table-fixed table-fixed-hosts" data-sortable>
                   <thead>
                     <tr>
                       <th>IP <span class="caret"></span></th>
@@ -49,26 +49,26 @@
                         echo '<td>'.$row['os'].'</td>';
                         echo '<td>'.$row['mac'].'</td>';
                         if ($row['interface'] == '') {
-                            echo '<td><a href="comments.php?ip='.$row['ip'].'&vlan='.$row['vlan'].'&type=Add&item=Interface">Add</a></td>';
+                            echo '<td><a href="comments.php?source=hosts&ip='.$row['ip'].'&vlan='.$row['vlan'].'&type=Add&item=Interface">Add</a></td>';
                         } else {
-                            echo '<td><a href="comments.php?ip='.$row['ip'].'&vlan='.$row['vlan'].'&type=Modify&item=Interface">'.$row['interface'].'</a></td>';
+                            echo '<td><a href="comments.php?source=hosts&ip='.$row['ip'].'&vlan='.$row['vlan'].'&type=Modify&item=Interface">'.$row['interface'].'</a></td>';
                         }
                         if ($row['switch'] == '') {
-                            echo '<td><a href="comments.php?ip='.$row['ip'].'&vlan='.$row['vlan'].'&type=Add&item=Switch">Add</a></td>';
+                            echo '<td><a href="comments.php?source=hosts&ip='.$row['ip'].'&vlan='.$row['vlan'].'&type=Add&item=Switch">Add</a></td>';
                         } else {
-                            echo '<td><a href="comments.php?ip='.$row['ip'].'&vlan='.$row['vlan'].'&type=Modify&item=Switch">'.$row['switch'].'</a></td>';
+                            echo '<td><a href="comments.php?source=hosts&ip='.$row['ip'].'&vlan='.$row['vlan'].'&type=Modify&item=Switch">'.$row['switch'].'</a></td>';
                         }
                         if ($row['switch_interface'] == '') {
-                            echo '<td><a href="comments.php?ip='.$row['ip'].'&vlan='.$row['vlan'].'&type=Add&item=Switch Interface">Add</a></td>';
+                            echo '<td><a href="comments.php?source=hosts&ip='.$row['ip'].'&vlan='.$row['vlan'].'&type=Add&item=Switch Interface">Add</a></td>';
                         } else {
-                            echo '<td><a href="comments.php?ip='.$row['ip'].'&vlan='.$row['vlan'].'&type=Modify&item=Switch Interface">'.$row['switch_interface'].'</a></td>';
+                            echo '<td><a href="comments.php?source=hosts&ip='.$row['ip'].'&vlan='.$row['vlan'].'&type=Modify&item=Switch Interface">'.$row['switch_interface'].'</a></td>';
 			}
                         if ($row['comments'] == '') {
-                            echo '<td><a href="comments.php?ip='.$row['ip'].'&vlan='.$row['vlan'].'&type=Add&item=Comment">Add</a></td>';
+                            echo '<td><a href="comments.php?source=hosts&ip='.$row['ip'].'&vlan='.$row['vlan'].'&type=Add&item=Comment">Add</a></td>';
                         } else {
-                            echo '<td><a href="comments.php?ip='.$row['ip'].'&vlan='.$row['vlan'].'&type=Modify&item=Comment">'.$row['comments'].'</a></td>';
+                            echo '<td><a href="comments.php?source=hosts&ip='.$row['ip'].'&vlan='.$row['vlan'].'&type=Modify&item=Comment">'.$row['comments'].'</a></td>';
                         }
-                        echo '<td><a href="ports.php?ip='.$row['ip'].'">Details</a></td>';
+                        echo '<td><a href="ports.php?source=hosts&ip='.$row['ip'].'">Details</a></td>';
                         echo '</tr>';
                     }
                     Database::disconnect();

@@ -11,7 +11,7 @@
     <div class="container-fluid">
             <div class="row">
                 <h3>Hosts for vlan <?php echo $vlan; ?></h3>
-                <table id="hosts_table" class="table table-striped table-bordered" data-sortable>
+                <table id="hosts_table" class="table table-striped table-fixed table-fixed-compare" data-sortable>
                   <thead>
                     <tr>
                       <th>IP <span class="caret"></span></th>

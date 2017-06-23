@@ -14,7 +14,7 @@
         <div class="pull-right" style="padding-bottom:20px">
             <p><button type="button" class="btn btn-info" onclick="location.href='hosts_compare.php?vlan=<?=$vlan?>&scanid=<?=$scanid?>';">Compare scan</button> <button id="export" data-export="export" type="button" class="btn btn-info">Export</button></p>
         </div>
-                <table id="hosts_table" class="table table-striped table-bordered" data-sortable>
+                <table id="hosts_table" class="table table-striped table-fixed table-fixed-audit" data-sortable>
                   <thead>
                     <tr>
                       <th>IP <span class="caret"></span></th>

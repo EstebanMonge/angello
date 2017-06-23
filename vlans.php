@@ -1,14 +1,7 @@
-<?php
-        require 'header.php';
-?>
 <body>
     <?php
-        echo drawHeader();
-    if (!$_GET) {
-        $vlan = 128;
-    } else {
-        $vlan = $_GET['vlan'];
-    }
+    require 'header.php';
+    echo drawHeader();
     ?>
     <div class="container-fluid">
             <div class="row">
@@ -16,10 +9,15 @@
             </div>
             <div class="pull-right" style="padding-bottom:20px">
         <?php
+        try {
         if (isset($_COOKIE['isadmin'])) {
             echo '<a href="add_vlan.php" class="btn btn-info" role="button">Add VLAN</a>';
         }
-        ?>
+        }
+        catch ( Exception $e ){
+           echo 'Problem detected: ',  $e->getMessage(), "\n";
+        }
+       ?>
             </div>
             <div>
                 <table class="table table-striped table-bordered" data-sortable>
@@ -35,6 +33,7 @@
                   </thead>
                   <tbody>
                     <?php
+		    try {
                     $pdo = Database::connect();
                     $sql = 'SELECT * FROM vlans ORDER BY vlan ASC';
                     foreach ($pdo->query($sql) as $row) {
@@ -44,7 +43,7 @@
                         echo '<td>'.$row['iprange'].'</td>';
                         echo '<td>'.$row['mask'].'</td>';
                         if ($row['description'] == '') {
-                            echo '<td><a href="comments.php?vlan='.$row['vlan'].'&type=Add&item=Description">Add</a></td>';
+                            echo '<td><a href="comments.php?form=vlan&vlan='.$row['vlan'].'&type=Add&item=Description">Add</a></td>';
                         } else {
                             echo '<td><a href="comments.php?vlan='.$row['vlan'].'&type=Modify&item=Description">'.$row['description'].'</a></td>';
                         }
@@ -57,6 +56,10 @@
                         }
                     }
                     Database::disconnect();
+                    }
+                    catch ( Exception $e ){
+                       echo 'Problem detected: ',  $e->getMessage(), "\n";
+                    }
                     ?>
                   </tbody>
             </table>
